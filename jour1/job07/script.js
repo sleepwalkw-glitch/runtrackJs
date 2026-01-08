@@ -14,7 +14,7 @@ function jourTravaille(date){
     let dateF = concatenation(jour, mois);
 
     for(let ferie of feries ){
-        if(dateE === ferie ){
+        if(dateF === ferie ){
             console.log("Le "+dateF + " est un jour férié.");
             return;}
     }
