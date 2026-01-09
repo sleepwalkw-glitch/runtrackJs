@@ -1,0 +1,14 @@
+body{
+    min-height: 4096px;
+    margin :0;
+}
+
+footer{
+    position : fixed;
+    bottom :0;
+    left :0;
+    width :0%;
+    height : 40px;
+    background-color: green;
+
+}

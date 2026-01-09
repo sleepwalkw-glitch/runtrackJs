@@ -1,0 +1,31 @@
+body{
+    background-color: white;
+    color: black;
+    transition: all 0.5s;
+}
+
+h3{
+    color: cadetblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: inset;
+    border: 2px solid beige;
+}
+
+h3.tt-style{
+    color:midnightblue;
+    border-color: cadetblue;
+    border:4px dotted ;
+}
+
+p{
+    font-weight: bolder;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    color: chartreuse;
+}
+body.konami{
+    background-color: black;
+    color: white;
+    font-family: "'Courier New', Courier, monospace";
+    text-align: center;
+}
