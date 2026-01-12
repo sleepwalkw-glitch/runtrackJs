@@ -12,6 +12,6 @@ window.addEventListener('scroll',function(){
     // footer.style.backgroundColor ="rgb(255,0,0)";
 
     footer.style.width = scrollPercent + '%';
-    footer.style.height = scrollPercent + '%';
+    // footer.style.height = scrollPercent + '%';
     
 })

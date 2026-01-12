@@ -44,7 +44,8 @@ document.addEventListener("keydown",function(event){
     //     keys = [];
     //     activeKonami();
     // }
-});
+
+    });
 
 function activeKonami(){
    
@@ -60,6 +61,7 @@ function activeKonami(){
     },3000);     
    
 }
+
 
 
 

@@ -2,6 +2,9 @@ const footer = document.getElementById('footer');
 
 window.addEventListener('scroll',function(){
     const scrollTop = window.scrollY;
+    // here, we can see all the attributes of window object, and scrollY is one of them
+    console.log(window);
+    console.log(scrollY);
     const docHeight = document.documentElement.scrollHeight-window.innerHeight;
     console.log(scrollTop);
     // console.log(docHeight);
