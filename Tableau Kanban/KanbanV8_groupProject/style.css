@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;600;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Anton', sans-serif;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+        url("terrain.jpg") center / cover no-repeat;
+}
+
+/* HEADER */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    color: white;
+    background: transparent;
+}
+
+.title {
+    margin: 0;
+    letter-spacing: 2px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* NAVBAR TRANSPARENTE */
+.navbar.bg-body-tertiary {
+    background-color: transparent !important;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* FORMULAIRE DE RECHERCHE */
+#searchForm {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+/* INPUTS & SELECTS */
+#searchForm input,
+#searchForm select {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+/* PLACEHOLDER */
+#searchForm input::placeholder {
+    color: #888;
+}
+
+/* BOUTONS NAVBAR */
+#searchForm .btn {
+    border-width: 2px;
+}
+
+/* FORM AJOUT JOUEUR */
+.add-form {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(255,255,255,0.9);
+}
+
+.add-form input,
+.add-form select,
+.add-form button {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+}
+
+.add-form button {
+    background: #ff7a00;
+    color: white;
+    cursor: pointer;
+}
+
+/* KANBAN */
+.kanban {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: transparent;
+}
+
+/* COLONNES */
+section {
+    width: 33%;
+    background: transparent;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+/* TITRES COLONNES */
+h3 {
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,.55);
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* ZONE DE DROP */
+.list {
+    min-height: 250px;
+    padding: 10px;
+    background: transparent;
+    border-radius: 15px;
+}
+
+/* DRAG OVER */
+.list.drag-over {
+    background: rgba(255,122,0,.25);
+    border: 2px dashed #ff7a00;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    cursor: grab;
+    box-shadow: 0 4px 8px rgba(0,0,0,.35);
+    border-left: 10px solid #ff7a00;
+}
+
+.card.low {
+    border-left-color: #3c8d0d;
+}
+
+.card.medium {
+    border-left-color: #ffb000;
+}
+
+.card.high {
+    border-left-color: #c0392b;
+}
+
+.card.dragging {
+    opacity: 0.5;
+}
+
+/* ACTIONS */
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.card button {
+    border: none;
+    background: #eee;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.card button:hover {
+    background: #ddd;
+}
+
+/* ÉDITION */
+.card input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* TACKLE ANIMATION */
+@keyframes tackle {
+    0% { transform: translateX(-30px); }
+    50% { transform: translateX(30px); }
+    100% { transform: translateX(0); }
+}
+
+.card.tackle {
+    animation: tackle 0.35s ease-out;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.card-name {
+    font-size: 1.05rem;
+}
+
+.card-date {
+    font-size: 1rem;
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+.card-body {
+    margin-bottom: 8px;
+  max-height: 120px;          /* hauteur visible */
+  overflow-y: auto;          /* scrollbar verticale */
+  padding-right: 6px;        /* évite que le texte colle à la scrollbar */
+  line-height: 1.3;
+}
+
+/* BOUTONS PRIORITÉ */
+.priority-buttons {
+    display: flex;
+    gap: 6px;
+    margin: 8px 0;
+}
+
+.priority-buttons button {
+    flex: 1;
+    padding: 6px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    color: white;
+}
+
+/* COULEURS */
+.priority-buttons button[data-priority="low"] {
+    background: #3c8d0d;
+}
+
+.priority-buttons button[data-priority="medium"] {
+    background: #ffb000;
+    color: black;
+}
+
+.priority-buttons button[data-priority="high"] {
+    background: #c0392b;
+}
+
+/* ACTIF */
+.priority-buttons button.active {
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.25);
+    transform: scale(1.05);
+}
+
+/* BOUTONS STATUT */
+/* ÉTAT ACTIF */
+.status-buttons button.active {
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+}
+
+/* HOVER */
+.status-buttons button:hover {
+    filter: brightness(1.1);
+}
+
+.card-body-edit {
+  width: 100%;
+  min-height: 90px;
+  max-height: 180px;
+  resize: vertical;
+  overflow-y: auto;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+/* DONE COLUMN FLASH EFFECT */
+.done-flash {
+    animation: flashBorder 0.6s ease-in-out 3;
+}
+
+@keyframes flashBorder {
+    0% { border: 4px solid rgba(255,255,255,0); }
+    50% { border: 4px dashed #ff7a00; }
+    100% { border: 4px solid rgba(255,255,255,0); }
+}
+
+/* SHOW IMAGE */
+.hiden{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.8);
+    
+}
+
+.show{
+    opacity: 1;
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%, -50%) scale(1);
+    transition: 
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.show-image{
+    width: 200px;
+    height:auto;
+}

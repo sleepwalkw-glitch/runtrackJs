@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>User Stories</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER + NAV -->
+<header class="top-bar">
+    <h1 class="title">USER STORIES</h1>
+
+    <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <form id="searchForm" class="d-flex" role="search" method="">
+            <input
+                id="searchInput"
+                title="searchInput"
+                class="form-control me-2"
+                type="search"
+                placeholder="Search by title"
+                aria-label="Search"
+            />
+
+            <select id="filterPriority" class="filterPriority">
+                <option value="">--priority--</option>
+                <option value="low">🟢Low</option>
+                <option value="medium">🟡Medium</option>
+                <option value="high">🔴High</option>
+            </select>
+
+            <select id="filterDate" class="filterDate">
+                <option value="">--date limit--</option>
+                <option value="ascend">Oldest to Newest</option>
+                <option value="descend">Newest to Oldest</option>
+            </select>
+
+            <select id="filterStatus" class="filterStatus">
+                <option value="">--status--</option>
+                <option value="todo">To Do</option>
+                <option value="inprogress">In Progress</option>
+                <option value="done">Done</option>
+            </select>
+
+            <button id="searchBtn" class="btn btn-outline-success" type="submit">
+                Search
+            </button>
+
+            <button id="resetBtn" class="btn btn-outline-success" type="reset">
+                reset
+            </button>
+        </form>
+    </div>
+</nav>
+</header>
+
+<!-- FORMULAIRE -->
+<form id="playerForm" class="add-form">
+    <input id="name" type="text" placeholder="Nom">
+    <input id="position" type="text" placeholder="Position">
+
+    <select id="priority">
+        <option value="low">🟢Low</option>
+        <option value="medium">🟡Medium</option>
+        <option value="high">🔴High</option>
+    </select>
+
+    <input id="matchDate" type="date">
+    <button type="submit">Ajouter</button>
+</form>
+
+<!-- KANBAN -->
+<main class="kanban">
+    <section data-status="todo">
+        <h3>🟢 En entraînement</h3>
+        <div class="list"></div>
+    </section>
+
+    <section data-status="inprogress">
+        <h3>🏉 En match</h3>
+        <div class="list"></div>
+    </section>
+
+    <section data-status="done">
+        <h3>🏆 Victoire!!</h3>
+        <div class="list"></div>
+    </section>
+
+</main>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
